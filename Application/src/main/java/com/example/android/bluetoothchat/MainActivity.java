@@ -37,7 +37,8 @@ import java.util.List;
  * on other devices it's visibility is controlled by an item on the Action Bar.
  */
 public class MainActivity extends FragmentActivity {
-
+    private ListView mlistView;
+    private CustomAdapter mCustomAdapater;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +50,52 @@ public class MainActivity extends FragmentActivity {
             transaction.replace(R.id.sample_content_fragment, fragment);
             transaction.commit();
         }
+        //初期パラメータ読み込み＆ListViewへセット
+        initParameterSet();
+        mlistView = (ListView) findViewById(R.id.p_list);
+        mlistView.setAdapter(mCustomAdapater);  //java.lang.RuntimeExceptionでエラー
     }
-
+    private void initParameterSet() {
+        AssetManager am = getResources().getAssets();
+        InputStream is = null;
+        BufferedReader br = null;
+        try {
+            try {
+                is = am.open("init_parameter.txt");
+                br = new BufferedReader(new InputStreamReader(is));
+                String str;
+                List<ParamDetails> pd_List = new ArrayList<>();
+                while ((str = br.readLine()) != null) {
+                    ParamDetails pd = new ParamDetails();
+                    String[] st = str.split(",", 5);
+                    //init_parameter.txt データ配置：no,id,name,value,unit
+                    pd.setParam_no(st[0]);
+                    pd.setParam_id(st[1]);
+                    pd.setParam_name(st[2]);
+                    pd.setParam_value(parseInt(st[3], 0));    // valueのみintで取り込み
+                    pd.setParam_unit(st[4]);
+                    pd_List.add(pd);
+                }
+                mCustomAdapater = new CustomAdapter(this, 0, pd_List);
+                Log.d("init_parameter", pd_List.toString());
+            } finally {
+                if (br != null) br.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "初期パラメータの読み込みに失敗しました。", Toast.LENGTH_LONG).show();
+        }
+    }
+    public static int parseInt(String value, int defaultValue) {
+        try {
+            return Integer.parseInt(value);
+        } catch ( NumberFormatException e ) {
+            return defaultValue;
+        }
+    }
+    public static int parseInt(String value) {
+        return parseInt(value, 0);
+    }
     @Override
     protected void onStart() {
         super.onStart();

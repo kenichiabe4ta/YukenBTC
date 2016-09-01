@@ -1,6 +1,2 @@
-CHANGED,E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\bluetoothchat\BTCFragment$3$override.class
 CHANGED,E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\bluetoothchat\BTCFragment$override.class
-CHANGED,E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\bluetoothchat\BTCFragment$1$override.class
 CHANGED,E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\bluetoothchat\MainActivity$override.class
-CHANGED,E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\bluetoothchat\BTCFragment$2$override.class
