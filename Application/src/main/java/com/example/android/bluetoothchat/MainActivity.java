@@ -14,10 +14,21 @@
 * limitations under the License.
 */
 package com.example.android.bluetoothchat;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Menu;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 /**
  * A simple launcher activity containing a summary sample description, sample log and a custom
  * {@link android.support.v4.app.Fragment} which can display a view.
@@ -26,17 +37,20 @@ import android.view.Menu;
  * on other devices it's visibility is controlled by an item on the Action Bar.
  */
 public class MainActivity extends FragmentActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            BluetoothChatFragment fragment = new BluetoothChatFragment();
+            BTCFragment fragment = new BTCFragment();
             transaction.replace(R.id.sample_content_fragment, fragment);
             transaction.commit();
         }
     }
+
     @Override
     protected void onStart() {
         super.onStart();

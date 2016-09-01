@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -41,8 +42,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.common.logger.Log;
-public class BluetoothChatFragment extends Fragment {       //This fragment controls Bluetooth to communicate with other devices.
-    private static final String TAG = "BluetoothChatFragment";
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+public class BTCFragment extends Fragment {       //This fragment controls Bluetooth to communicate with other devices.
+    private static final String TAG = "BTCFragment";
     // Intent request codes
     private static final int REQUEST_CONNECT_DEVICE_SECURE = 1;
     private static final int REQUEST_CONNECT_DEVICE_INSECURE = 2;
@@ -56,7 +65,7 @@ public class BluetoothChatFragment extends Fragment {       //This fragment cont
     private ArrayAdapter<String> mConversationArrayAdapter; //Array adapter for the conversation thread
     private StringBuffer mOutStringBuffer;                  //String buffer for outgoing messages
     private BluetoothAdapter mBluetoothAdapter = null;      //Local Bluetooth adapter
-    private BluetoothChatService mChatService = null;       //Member object for the chat services
+    private BTCService mChatService = null;       //Member object for the chat services
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -99,19 +108,20 @@ public class BluetoothChatFragment extends Fragment {       //This fragment cont
         // onResume() will be called when ACTION_REQUEST_ENABLE activity returns.
         if (mChatService != null) {
             // Only if the state is STATE_NONE, do we know that we haven't started already
-            if (mChatService.getState() == BluetoothChatService.STATE_NONE) {
+            if (mChatService.getState() == BTCService.STATE_NONE) {
                 mChatService.start();       // Start the Bluetooth chat services
             }
         }
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_bluetooth_chat, container, false);
+        return inflater.inflate(R.layout.activity_main_fragment, container, false);
     }
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        mConversationView = (ListView) view.findViewById(R.id.in);
+        mConversationView = (ListView) view.findViewById(R.id.in);  // in: Message表示用listview
         mOutEditText = (EditText) view.findViewById(R.id.edit_text_out);
         mSendButton = (Button) view.findViewById(R.id.button_send);
     }
@@ -135,8 +145,8 @@ public class BluetoothChatFragment extends Fragment {       //This fragment cont
                 }
             }
         });
-        // Initialize the BluetoothChatService to perform bluetooth connections
-        mChatService = new BluetoothChatService(getActivity(), mHandler);
+        // Initialize the BTCService to perform bluetooth connections
+        mChatService = new BTCService(getActivity(), mHandler);
         // Initialize the buffer for outgoing messages
         mOutStringBuffer = new StringBuffer("");
     }
@@ -149,12 +159,12 @@ public class BluetoothChatFragment extends Fragment {       //This fragment cont
         }
     }
     private void sendMessage(String message) {
-        if (mChatService.getState() != BluetoothChatService.STATE_CONNECTED) { // Check that we're actually connected before trying anything
+        if (mChatService.getState() != BTCService.STATE_CONNECTED) { // Check that we're actually connected before trying anything
             Toast.makeText(getActivity(), R.string.not_connected, Toast.LENGTH_SHORT).show();
             return;
         }
         if (message.length() > 0) {             // Check that there's actually something to send
-            byte[] send = message.getBytes();   // Get the message bytes and tell the BluetoothChatService to write
+            byte[] send = message.getBytes();   // Get the message bytes and tell the BTCService to write
             mChatService.write(send);
             mOutStringBuffer.setLength(0);      // Reset out string buffer to zero and clear the edit text field
             mOutEditText.setText(mOutStringBuffer);
@@ -186,7 +196,7 @@ public class BluetoothChatFragment extends Fragment {       //This fragment cont
         if (null == actionBar) { return; }
         actionBar.setSubtitle(subTitle);
     }
-    //！！！"BluetoothChatService"からのイベント＆情報を受取るためハンドラを設定！！！
+    //！！！"BTCService"からのイベント＆情報を受取るためハンドラを設定！！！
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -194,15 +204,15 @@ public class BluetoothChatFragment extends Fragment {       //This fragment cont
             switch (msg.what) {
                 case Constants.MESSAGE_STATE_CHANGE:
                     switch (msg.arg1) {
-                        case BluetoothChatService.STATE_CONNECTED:
+                        case BTCService.STATE_CONNECTED:
                             setStatus(getString(R.string.title_connected_to, mConnectedDeviceName));
                             mConversationArrayAdapter.clear();
                             break;
-                        case BluetoothChatService.STATE_CONNECTING:
+                        case BTCService.STATE_CONNECTING:
                             setStatus(R.string.title_connecting);
                             break;
-                        case BluetoothChatService.STATE_LISTEN:
-                        case BluetoothChatService.STATE_NONE:
+                        case BTCService.STATE_LISTEN:
+                        case BTCService.STATE_NONE:
                             setStatus(R.string.title_not_connected);
                             break;
                     }

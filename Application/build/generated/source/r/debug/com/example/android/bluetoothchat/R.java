@@ -283,37 +283,43 @@ containing a value of this type.
         public static final int center_vertical=0x7f090007;
         public static final int clip_horizontal=0x7f090008;
         public static final int clip_vertical=0x7f090009;
-        public static final int discoverable=0x7f090020;
+        public static final int discoverable=0x7f090025;
         public static final int edit_text_out=0x7f09001b;
         public static final int end=0x7f09000a;
         public static final int fill=0x7f09000b;
         public static final int fill_horizontal=0x7f09000c;
         public static final int fill_vertical=0x7f09000d;
         public static final int horizontal=0x7f090000;
+        public static final int idTextView=0x7f09001f;
         public static final int in=0x7f090019;
-        public static final int insecure_connect_scan=0x7f09001f;
+        public static final int insecure_connect_scan=0x7f090024;
         public static final int left=0x7f09000e;
-        public static final int menu_toggle_log=0x7f090021;
+        public static final int menu_toggle_log=0x7f090026;
+        public static final int nameTextView=0x7f090022;
         public static final int new_devices=0x7f090015;
+        public static final int noTextView=0x7f09001e;
         public static final int p_list=0x7f09001a;
         public static final int paired_devices=0x7f090013;
         public static final int right=0x7f09000f;
         public static final int sample_content_fragment=0x7f090018;
         public static final int sample_main_layout=0x7f090017;
-        public static final int secure_connect_scan=0x7f09001e;
+        public static final int secure_connect_scan=0x7f090023;
         public static final int start=0x7f090010;
         public static final int textView2=0x7f09001d;
         public static final int title_new_devices=0x7f090014;
         public static final int title_paired_devices=0x7f090012;
         public static final int top=0x7f090011;
+        public static final int unitTextView=0x7f090021;
+        public static final int valueTextView=0x7f090020;
         public static final int vertical=0x7f090001;
     }
     public static final class layout {
         public static final int activity_device_list=0x7f030000;
         public static final int activity_main=0x7f030001;
-        public static final int device_name=0x7f030002;
-        public static final int fragment_bluetooth_chat=0x7f030003;
+        public static final int activity_main_fragment=0x7f030002;
+        public static final int device_name=0x7f030003;
         public static final int message=0x7f030004;
+        public static final int param_list=0x7f030005;
     }
     public static final class menu {
         public static final int bluetooth_chat=0x7f080000;

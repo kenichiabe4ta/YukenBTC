@@ -35,8 +35,8 @@ import java.util.UUID;
  * incoming connections, a thread for connecting with a device, and a
  * thread for performing data transmissions when connected.
  */
-public class BluetoothChatService {
-    private static final String TAG = "BluetoothChatService";    // Debugging
+public class BTCService {
+    private static final String TAG = "BTCService";    // Debugging
     private static final String NAME_SECURE = "BluetoothChatSecure";// Name for the SDP record when creating server socket
     private static final String NAME_INSECURE = "BluetoothChatInsecure";
     // Unique UUID for this application
@@ -58,7 +58,7 @@ public class BluetoothChatService {
     public static final int STATE_CONNECTED = 3;  // now connected to a remote device
 
     //コンストラクタ   mHハンドラあり
-    public BluetoothChatService(Context context, Handler handler) {
+    public BTCService(Context context, Handler handler) {
         mAdapter = BluetoothAdapter.getDefaultAdapter();
         mState = STATE_NONE;
         mHandler = handler;
@@ -191,7 +191,7 @@ public class BluetoothChatService {
         bundle.putString(Constants.TOAST, "Unable to connect device");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
-        BluetoothChatService.this.start(); // Start the service over to restart listening mode
+        BTCService.this.start(); // Start the service over to restart listening mode
     }
     //Indicate that the connection was lost and notify the UI Activity.
     private void connectionLost() {
@@ -201,7 +201,7 @@ public class BluetoothChatService {
         bundle.putString(Constants.TOAST, "Device connection was lost");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
-        BluetoothChatService.this.start();        // Start the service over to restart listening mode
+        BTCService.this.start();        // Start the service over to restart listening mode
     }
     private class AcceptThread extends Thread {    //受信接続待機時スレッド
         // The local server socket
@@ -234,7 +234,7 @@ public class BluetoothChatService {
                     break;
                 }
                 if (socket != null) { // If a connection was accepted
-                    synchronized (BluetoothChatService.this) {
+                    synchronized (BTCService.this) {
                         switch (mState) {
                             case STATE_LISTEN:
                             case STATE_CONNECTING:        // Situation normal. Start the connected thread.
@@ -299,7 +299,7 @@ public class BluetoothChatService {
                 connectionFailed();
                 return;
             }
-            synchronized (BluetoothChatService.this) {    // Reset the ConnectThread because we're done
+            synchronized (BTCService.this) {    // Reset the ConnectThread because we're done
                 mConnectThread = null;
             }
             connected(mmSocket, mmDevice, mSocketType);  // Start the connected thread
@@ -357,7 +357,7 @@ public class BluetoothChatService {
                 } catch (IOException e) {
                     Log.e(TAG, "disconnected", e);
                     connectionLost();
-                    BluetoothChatService.this.start();// Start the service over to restart listening mode
+                    BTCService.this.start();// Start the service over to restart listening mode
                     break;
                 }
             }
