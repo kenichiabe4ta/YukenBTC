@@ -17,12 +17,18 @@
 <resources>
 
     <!-- Activity themes -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:actionBarSize">40dp</item>
+    </style>
 
-    <style name="Theme.Base" parent="android:Theme.Light" />
+    <style name="ActionBarStyle" parent="android:Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:backgroundStacked">@android:color/white</item>
+    </style>
 
-    <style name="Theme.Sample" parent="Theme.Base" />
 
-    <style name="AppTheme" parent="Theme.Sample" />
     <!-- Widget styling -->
 
     <style name="Widget" />

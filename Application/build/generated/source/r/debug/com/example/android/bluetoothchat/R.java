@@ -253,6 +253,12 @@ containing a value of this type.
         public static final int cardview_light_background=0x7f060001;
         public static final int cardview_shadow_end_color=0x7f060002;
         public static final int cardview_shadow_start_color=0x7f060003;
+        public static final int colorAccent=0x7f060004;
+        public static final int colorBlack=0x7f060005;
+        public static final int colorButtonText=0x7f060006;
+        public static final int colorPrimary=0x7f060007;
+        public static final int colorPrimaryDark=0x7f060008;
+        public static final int colorPrimaryLight=0x7f060009;
     }
     public static final class dimen {
         public static final int cardview_compat_inset_shadow=0x7f040002;
@@ -294,6 +300,7 @@ containing a value of this type.
         public static final int in=0x7f090019;
         public static final int insecure_connect_scan=0x7f090024;
         public static final int left=0x7f09000e;
+        public static final int main_Linearlayout=0x7f090017;
         public static final int menu_toggle_log=0x7f090026;
         public static final int nameTextView=0x7f090022;
         public static final int new_devices=0x7f090015;
@@ -302,7 +309,6 @@ containing a value of this type.
         public static final int paired_devices=0x7f090013;
         public static final int right=0x7f09000f;
         public static final int sample_content_fragment=0x7f090018;
-        public static final int sample_main_layout=0x7f090017;
         public static final int secure_connect_scan=0x7f090023;
         public static final int start=0x7f090010;
         public static final int textView2=0x7f09001d;
@@ -347,12 +353,12 @@ containing a value of this type.
         public static final int title_paired_devices=0x7f070012;
     }
     public static final class style {
-        public static final int AppTheme=0x7f050002;
-        public static final int CardView=0x7f050003;
-        public static final int CardView_Dark=0x7f050004;
-        public static final int CardView_Light=0x7f050005;
+        public static final int ActionBarStyle=0x7f050002;
+        public static final int AppTheme=0x7f050003;
+        public static final int CardView=0x7f050004;
+        public static final int CardView_Dark=0x7f050005;
+        public static final int CardView_Light=0x7f050006;
         public static final int Theme_Base=0x7f050001;
-        public static final int Theme_Sample=0x7f050006;
         public static final int Widget=0x7f050007;
         public static final int Widget_SampleMessage=0x7f050000;
         public static final int Widget_SampleMessageTile=0x7f050008;

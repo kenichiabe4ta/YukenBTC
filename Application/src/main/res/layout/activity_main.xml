@@ -18,7 +18,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/sample_main_layout">
+    android:id="@+id/main_Linearlayout">
 
     <View
         android:layout_width="match_parent"

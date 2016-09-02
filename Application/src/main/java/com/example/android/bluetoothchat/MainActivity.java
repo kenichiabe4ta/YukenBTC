@@ -19,7 +19,11 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -43,6 +47,7 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -50,10 +55,17 @@ public class MainActivity extends FragmentActivity {
             transaction.replace(R.id.sample_content_fragment, fragment);
             transaction.commit();
         }
-        //初期パラメータ読み込み＆ListViewへセット
+
+        // fragmentのviewをMainActivityから参照できるようにinflaterで追加
+        LayoutInflater inflater = LayoutInflater.from(this);
+        LinearLayout fragmentLayout = (LinearLayout)inflater.inflate(R.layout.activity_main_fragment, null);
+        LinearLayout mainLinearLayout = (LinearLayout) findViewById(R.id.main_Linearlayout);
+        mainLinearLayout.addView(fragmentLayout);
+
+        // 初期パラメータ読み込み＆ListViewへセット
         initParameterSet();
         mlistView = (ListView) findViewById(R.id.p_list);
-        mlistView.setAdapter(mCustomAdapater);  //java.lang.RuntimeExceptionでエラー
+        mlistView.setAdapter(mCustomAdapater);
     }
     private void initParameterSet() {
         AssetManager am = getResources().getAssets();
@@ -96,6 +108,21 @@ public class MainActivity extends FragmentActivity {
     public static int parseInt(String value) {
         return parseInt(value, 0);
     }
+    public void ds1_bt(View v){
+        mlistView.setSelection(0);
+    }
+    public void ds2_bt(View v){
+        mlistView.setSelection(10);
+    }
+    public void ds3_bt(View v){
+        mlistView.setSelection(20);
+    }
+    public void sys_bt(View v){
+        mlistView.setSelection(30);
+    }
+
+
+
     @Override
     protected void onStart() {
         super.onStart();

@@ -27,6 +27,12 @@ int color cardview_dark_background 0x7f060000
 int color cardview_light_background 0x7f060001
 int color cardview_shadow_end_color 0x7f060002
 int color cardview_shadow_start_color 0x7f060003
+int color colorAccent 0x7f060004
+int color colorBlack 0x7f060005
+int color colorButtonText 0x7f060006
+int color colorPrimary 0x7f060007
+int color colorPrimaryDark 0x7f060008
+int color colorPrimaryLight 0x7f060009
 int dimen cardview_compat_inset_shadow 0x7f040002
 int dimen cardview_default_elevation 0x7f040003
 int dimen cardview_default_radius 0x7f040004
@@ -62,6 +68,7 @@ int id idTextView 0x7f09001f
 int id in 0x7f090019
 int id insecure_connect_scan 0x7f090024
 int id left 0x7f09000e
+int id main_Linearlayout 0x7f090017
 int id menu_toggle_log 0x7f090026
 int id nameTextView 0x7f090022
 int id new_devices 0x7f090015
@@ -70,7 +77,6 @@ int id p_list 0x7f09001a
 int id paired_devices 0x7f090013
 int id right 0x7f09000f
 int id sample_content_fragment 0x7f090018
-int id sample_main_layout 0x7f090017
 int id secure_connect_scan 0x7f090023
 int id start 0x7f090010
 int id textView2 0x7f09001d
@@ -107,12 +113,12 @@ int string title_connecting 0x7f07000f
 int string title_not_connected 0x7f070010
 int string title_other_devices 0x7f070011
 int string title_paired_devices 0x7f070012
-int style AppTheme 0x7f050002
-int style CardView 0x7f050003
-int style CardView_Dark 0x7f050004
-int style CardView_Light 0x7f050005
+int style ActionBarStyle 0x7f050002
+int style AppTheme 0x7f050003
+int style CardView 0x7f050004
+int style CardView_Dark 0x7f050005
+int style CardView_Light 0x7f050006
 int style Theme_Base 0x7f050001
-int style Theme_Sample 0x7f050006
 int style Widget 0x7f050007
 int style Widget_SampleMessage 0x7f050000
 int style Widget_SampleMessageTile 0x7f050008
