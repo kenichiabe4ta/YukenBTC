@@ -24,8 +24,10 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -45,6 +47,8 @@ public class MainActivity extends FragmentActivity {
     private ListView mlistView;
     private CustomAdapter mCustomAdapater;
     private CustomCanvas mCustomCanvas;
+    private TextView mTV;
+    //private BTCService mChatService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +75,7 @@ public class MainActivity extends FragmentActivity {
         mlistView.setAdapter(mCustomAdapater);
         // Canvasのview取得(これがないとmCustomCanvas=nullのままNullPointerException発生
         mCustomCanvas = (CustomCanvas) findViewById(R.id.customview);
+        mTV = (TextView) findViewById(R.id.state);
     }
     private void initParameterSet() {
         AssetManager am = getResources().getAssets();
@@ -127,12 +132,26 @@ public class MainActivity extends FragmentActivity {
         mlistView.setSelection(30);
     }
 
+    // ダミーデータ送信
+    public void x10_plus(View v){
+        byte[] send = new byte[2];
+        send[0]=(byte)'s';
+        //mChatService.write(send);
+    }
+    public void x1_plus(View v){
+        byte[] send = new byte[2];
+        send[0]=(byte)'r';
+        //mChatService.write(send);
+    }
+
     // ダミーデータ描画
     public void ok_bt(View v){
         int[] wave_dt = new int[1024];
         for (int i=0; i<wave_dt.length; i++){ wave_dt[i]=i; }
         mCustomCanvas.setWavedt(wave_dt);
+        mTV.setText("CH1=dummy data");
     }
+
 
     @Override
     protected void onStart() {

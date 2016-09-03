@@ -48,6 +48,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/ch1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -56,6 +57,7 @@
                 android:textSize="10sp" />
 
             <TextView
+                android:id="@+id/ch2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,6 +66,7 @@
                 android:textSize="10sp" />
 
             <TextView
+                android:id="@+id/ch3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -72,6 +75,7 @@
                 android:textSize="10sp" />
 
             <TextView
+                android:id="@+id/ch4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -80,6 +84,7 @@
                 android:textSize="10sp" />
 
             <TextView
+                android:id="@+id/timediv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -195,7 +200,8 @@
                     android:layout_margin="0dp"
                     android:layout_weight="1"
                     android:padding="0dp"
-                    android:text="++" />
+                    android:text="++"
+                    android:onClick="x10_plus"/>
 
                 <Button
                     android:layout_width="match_parent"
@@ -203,7 +209,8 @@
                     android:layout_margin="0dp"
                     android:layout_weight="1"
                     android:padding="0dp"
-                    android:text="+" />
+                    android:text="+"
+                    android:onClick="x1_plus"/>
 
                 <Button
                     android:layout_width="match_parent"
@@ -277,7 +284,7 @@
                 android:layout_alignParentEnd="true" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="dummy"
