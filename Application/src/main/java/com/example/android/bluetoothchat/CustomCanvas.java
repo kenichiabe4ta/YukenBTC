@@ -4,26 +4,56 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 public class CustomCanvas extends View {
-    Paint mPaint;
+    private Paint mPaint;
+    private int mCanvas_w,mCanvas_h;
+    private float[] mWavedt=new float[4096];
 
     public CustomCanvas(Context context, AttributeSet attrs) {  //コンストラクタ
         super(context, attrs);
         mPaint = new Paint();
     }
+
     @Override
     protected void onDraw(Canvas canvas) {
-        // 背景、半透明
+        mCanvas_w=getWidth();
+        mCanvas_h=getHeight();
+        Log.d("canvas_w,canvas_h=",String.valueOf(mCanvas_w)+","+String.valueOf(mCanvas_h));
+        Log.d("canvas_root_w,h=",String.valueOf(getRootView().getWidth())+","+String.valueOf(getRootView().getHeight()));
+        // 背景
         canvas.drawColor(Color.BLACK);
-
-        // 円
-        mPaint.setColor(Color.argb(255, 68, 125, 255));
-        mPaint.setStrokeWidth(30);
-        mPaint.setAntiAlias(true);
-        mPaint.setStyle(Paint.Style.STROKE);
-        // (x1,y1,r,paint) 中心x1座標, 中心y1座標, r半径
-        canvas.drawCircle(50, 50, 20, mPaint);
+        // 枠線描画(10分割)
+        drawFrame(canvas);
+        // 波形描画
+        drawWave(canvas);
     }
-
+    private void drawFrame(Canvas canvas){
+        mPaint.setColor(Color.GRAY);
+        mPaint.setStrokeWidth(1);
+        for (int i = 0; i<mCanvas_h; i++) {
+            if (i % (mCanvas_h/10) != 0) { continue; }
+            canvas.drawLine(0, i, mCanvas_w, i, mPaint);// drawline(始点x,y,終点x,y,Paint)
+        }
+        for (int i = 0; i<mCanvas_w; i++) {
+            if (i % (mCanvas_w/10) != 0) { continue; }
+            canvas.drawLine(i, 0, i,mCanvas_h, mPaint);
+        }
+    }
+    private void drawWave(Canvas canvas){
+        mPaint.setColor(Color.RED);
+        mPaint.setStrokeWidth(5);
+        //drawLines (float[] pts,Paint paint)
+        //pts 	float: Array of points to draw [x0 y0 x1 y1 x2 y2 ...]
+        canvas.drawLines(mWavedt, mPaint);
+    }
+    public void setWavedt(int dt[]){
+        for(int i=0;i<dt.length;i++){
+            mWavedt[i*2]=i*mCanvas_w/dt.length;             //x軸 データ総数/100%幅
+            mWavedt[i*2+1]=mCanvas_h-dt[i]*mCanvas_h/1023;  //y軸 10bit幅/100%高さ
+        }
+        // 再描画 invalidate→onDraw→drawFrame→drawWaveの順番で波形表示
+        invalidate();
+    }
 }

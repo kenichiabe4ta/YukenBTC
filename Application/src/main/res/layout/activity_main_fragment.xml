@@ -26,11 +26,16 @@
         android:orientation="vertical">
 
         <!-- Message表示用 → Canvas用 -->
+        <com.example.android.bluetoothchat.CustomCanvas
+            android:id="@+id/customview"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="17" />
         <ListView
-            android:id="@+id/in"
+            android:id="@+id/massage_listview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="19"
+            android:layout_weight="0.1"
             android:stackFromBottom="true"
             android:transcriptMode="alwaysScroll" />
 
@@ -223,7 +228,8 @@
                     android:layout_weight="1"
                     android:padding="0dp"
                     android:text="OK"
-                    android:textSize="10dp" />
+                    android:textSize="10dp"
+                    android:onClick="ok_bt"/>
 
                 <Button
                     android:layout_width="wrap_content"

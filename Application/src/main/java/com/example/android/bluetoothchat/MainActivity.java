@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -43,6 +44,8 @@ import java.util.List;
 public class MainActivity extends FragmentActivity {
     private ListView mlistView;
     private CustomAdapter mCustomAdapater;
+    private CustomCanvas mCustomCanvas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +69,8 @@ public class MainActivity extends FragmentActivity {
         initParameterSet();
         mlistView = (ListView) findViewById(R.id.p_list);
         mlistView.setAdapter(mCustomAdapater);
+        // Canvasのview取得(これがないとmCustomCanvas=nullのままNullPointerException発生
+        mCustomCanvas = (CustomCanvas) findViewById(R.id.customview);
     }
     private void initParameterSet() {
         AssetManager am = getResources().getAssets();
@@ -108,6 +113,7 @@ public class MainActivity extends FragmentActivity {
     public static int parseInt(String value) {
         return parseInt(value, 0);
     }
+    // パラメータリスト用ボタン
     public void ds1_bt(View v){
         mlistView.setSelection(0);
     }
@@ -121,7 +127,12 @@ public class MainActivity extends FragmentActivity {
         mlistView.setSelection(30);
     }
 
-
+    // ダミーデータ描画
+    public void ok_bt(View v){
+        int[] wave_dt = new int[1024];
+        for (int i=0; i<wave_dt.length; i++){ wave_dt[i]=i; }
+        mCustomCanvas.setWavedt(wave_dt);
+    }
 
     @Override
     protected void onStart() {

@@ -19,7 +19,6 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -42,13 +41,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.common.logger.Log;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BTCFragment extends Fragment {       //This fragment controls Bluetooth to communicate with other devices.
     private static final String TAG = "BTCFragment";
@@ -121,7 +113,7 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
     }
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        mConversationView = (ListView) view.findViewById(R.id.in);  // in: Message表示用listview
+        mConversationView = (ListView) view.findViewById(R.id.massage_listview);  // massage_listview:Message表示用listview
         mOutEditText = (EditText) view.findViewById(R.id.edit_text_out);
         mSendButton = (Button) view.findViewById(R.id.button_send);
     }
