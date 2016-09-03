@@ -57,7 +57,9 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
     private ArrayAdapter<String> mConversationArrayAdapter; //Array adapter for the conversation thread
     private StringBuffer mOutStringBuffer;                  //String buffer for outgoing messages
     private BluetoothAdapter mBluetoothAdapter = null;      //Local Bluetooth adapter
-    private BTCService mChatService = null;       //Member object for the chat services
+
+    // MainActivity.java内で
+    public BTCService mChatService = null;       //Member object for the chat services
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

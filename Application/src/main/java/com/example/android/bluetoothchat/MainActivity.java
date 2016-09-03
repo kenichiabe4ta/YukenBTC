@@ -22,9 +22,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -48,18 +46,22 @@ public class MainActivity extends FragmentActivity {
     private CustomAdapter mCustomAdapater;
     private CustomCanvas mCustomCanvas;
     private TextView mTV;
-    //private BTCService mChatService;
+
+    // BTCFragment.java#setupChatで生成されるmChatServiceインスタンスと混同
+    // MainActivity内でmChatService.write(send);としてmChatService=NULLでエラー
+    private BTCFragment mBTCFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // キーボード非表示
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            BTCFragment fragment = new BTCFragment();
-            transaction.replace(R.id.sample_content_fragment, fragment);
+            mBTCFragment = new BTCFragment();
+            transaction.replace(R.id.sample_content_fragment, mBTCFragment);
             transaction.commit();
         }
 
@@ -135,13 +137,13 @@ public class MainActivity extends FragmentActivity {
     // ダミーデータ送信
     public void x10_plus(View v){
         byte[] send = new byte[2];
-        send[0]=(byte)'s';
-        //mChatService.write(send);
+        send[0]=(byte)'s';          // LED点灯
+        mBTCFragment.mChatService.write(send);  //mChatService.write(send);だとエラー
     }
     public void x1_plus(View v){
         byte[] send = new byte[2];
-        send[0]=(byte)'r';
-        //mChatService.write(send);
+        send[0]=(byte)'r';          // LED消灯
+        mBTCFragment.mChatService.write(send);
     }
 
     // ダミーデータ描画
@@ -151,7 +153,6 @@ public class MainActivity extends FragmentActivity {
         mCustomCanvas.setWavedt(wave_dt);
         mTV.setText("CH1=dummy data");
     }
-
 
     @Override
     protected void onStart() {

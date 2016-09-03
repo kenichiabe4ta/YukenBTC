@@ -35,8 +35,8 @@ import java.util.UUID;
  * incoming connections, a thread for connecting with a device, and a
  * thread for performing data transmissions when connected.
  */
-public class BTCService {
-    private static final String TAG = "BTCService";    // Debugging
+public class BTCService {                           // BTCFragment.java#setupChatでmChatServiceインスタンス生成
+    private static final String TAG = "BTCService"; // Debugging
     private static final String NAME_SECURE = "BluetoothChatSecure";// Name for the SDP record when creating server socket
     private static final String NAME_INSECURE = "BluetoothChatInsecure";
     // Unique UUID for this application
