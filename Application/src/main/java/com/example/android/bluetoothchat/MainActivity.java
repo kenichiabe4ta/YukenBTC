@@ -138,12 +138,14 @@ public class MainActivity extends FragmentActivity {
     public void x10_plus(View v){
         byte[] send = new byte[2];
         send[0]=(byte)'s';          // LED点灯
-        mBTCFragment.mChatService.write(send);  //mChatService.write(send);だとエラー
+        //mBTCFragment.mChatService.write(send);  //mChatService.write(send);だとエラー
+        mBTCFragment.getmChatService().write(send);
+
     }
     public void x1_plus(View v){
         byte[] send = new byte[2];
         send[0]=(byte)'r';          // LED消灯
-        mBTCFragment.mChatService.write(send);
+        mBTCFragment.getmChatService().write(send);
     }
 
     // ダミーデータ描画
