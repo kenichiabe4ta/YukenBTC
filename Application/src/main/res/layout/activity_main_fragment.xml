@@ -31,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="17" />
+
         <ListView
             android:id="@+id/massage_listview"
             android:layout_width="match_parent"
@@ -127,37 +128,37 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="ds1_bt"
                         android:padding="0dp"
                         android:text="DS1"
-                        android:textSize="10dp"
-                        android:onClick="ds1_bt"/>
+                        android:textSize="10dp" />
                     <!-- DS2 -->
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="ds2_bt"
                         android:padding="0dp"
                         android:text="DS2"
-                        android:textSize="10dp"
-                        android:onClick="ds2_bt"/>
+                        android:textSize="10dp" />
                     <!-- DS3 -->
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="ds3_bt"
                         android:padding="0dp"
                         android:text="DS3"
-                        android:textSize="10dp"
-                        android:onClick="ds3_bt"/>
+                        android:textSize="10dp" />
                     <!-- SYS -->
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="sys_bt"
                         android:padding="0dp"
                         android:text="SYS"
-                        android:textSize="10dp"
-                        android:onClick="sys_bt"/>
+                        android:textSize="10dp" />
                 </LinearLayout>
                 <!-- パラメータ一覧listview -->
                 <ListView
@@ -169,22 +170,55 @@
 
             <!-- ③２列目 -->
             <LinearLayout
+                android:id="@+id/p_editUI"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.01"
                 android:orientation="vertical">
                 <!-- ↑weightを可変し横幅比率を制御 -->
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="0dp"
                     android:layout_weight="1"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/x10_plus"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:onClick="x10_plus"
+                    android:padding="0dp"
+                    android:text="++" />
+
+                <Button
+                    android:id="@+id/x1_plus"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:onClick="x1_plus"
+                    android:padding="0dp"
+                    android:text="+" />
+
+                <!-- ↓ id表示 -->
+                <TextView
+                    android:id="@+id/p_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="0.5"
                     android:gravity="center"
                     android:padding="0dp"
                     android:text="DS1-1"
                     android:textSize="12dp" />
 
+                <!-- ↓ value表示 -->
                 <TextView
+                    android:id="@+id/p_value"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="0dp"
@@ -195,64 +229,53 @@
                     android:textSize="12dp" />
 
                 <Button
+                    android:id="@+id/x1_minus"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:padding="0dp"
-                    android:text="++"
-                    android:onClick="x10_plus"/>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:padding="0dp"
-                    android:text="+"
-                    android:onClick="x1_plus"/>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
+                    android:onClick="x1_minus"
                     android:padding="0dp"
                     android:text="-" />
 
                 <Button
+                    android:id="@+id/x10_minus"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="0dp"
                     android:layout_weight="1"
+                    android:onClick="x10_minus"
                     android:padding="0dp"
                     android:text="- -" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:padding="0dp"
-                    android:text="OK"
-                    android:textSize="10dp"
-                    android:onClick="ok_bt"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:padding="0dp"
-                    android:text="cancel"
-                    android:textSize="10dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0.5"
                     android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/ok_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:onClick="ok_bt"
+                    android:padding="0dp"
+                    android:text="OK"
+                    android:textSize="10dp" />
+
+                <Button
+                    android:id="@+id/cancel_bt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:onClick="cancel_bt"
+                    android:padding="0dp"
+                    android:text="CANCEL"
+                    android:textSize="10dp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -263,34 +286,62 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3">
+
             <EditText
                 android:id="@+id/edit_text_out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10dp"
-                android:hint="debug用"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:hint="debug用"
+                android:textSize="10dp" />
 
             <Button
                 android:id="@+id/button_send"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:text="@string/send"
                 android:textSize="10dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignTop="@+id/edit_text_out" />
 
             <TextView
                 android:id="@+id/state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="dummy"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="dummy" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="s"
+                android:onClick="s_bt"
+                android:id="@+id/button"
+                android:layout_alignTop="@+id/button2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/button_send"
+                android:layout_alignLeft="@+id/button_send"
+                android:layout_alignStart="@+id/button_send" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="r"
+                android:onClick="r_bt"
+                android:id="@+id/button2"
+                android:layout_above="@+id/edit_text_out"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/state"
+                android:layout_toLeftOf="@+id/button_send"
+                android:layout_toStartOf="@+id/button_send" />
 
         </RelativeLayout>
     </LinearLayout>

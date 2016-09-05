@@ -259,6 +259,7 @@ containing a value of this type.
         public static final int colorPrimary=0x7f060007;
         public static final int colorPrimaryDark=0x7f060008;
         public static final int colorPrimaryLight=0x7f060009;
+        public static final int colorWhite=0x7f06000a;
     }
     public static final class dimen {
         public static final int cardview_compat_inset_shadow=0x7f040002;
@@ -282,8 +283,11 @@ containing a value of this type.
         public static final int alignBounds=0x7f090002;
         public static final int alignMargins=0x7f090003;
         public static final int bottom=0x7f090004;
+        public static final int button=0x7f09002d;
+        public static final int button2=0x7f09002e;
         public static final int button_scan=0x7f090016;
-        public static final int button_send=0x7f090022;
+        public static final int button_send=0x7f09002b;
+        public static final int cancel_bt=0x7f090029;
         public static final int center=0x7f090005;
         public static final int center_horizontal=0x7f090006;
         public static final int center_vertical=0x7f090007;
@@ -294,36 +298,44 @@ containing a value of this type.
         public static final int clip_horizontal=0x7f090008;
         public static final int clip_vertical=0x7f090009;
         public static final int customview=0x7f090019;
-        public static final int discoverable=0x7f09002b;
-        public static final int edit_text_out=0x7f090021;
+        public static final int discoverable=0x7f090036;
+        public static final int edit_text_out=0x7f09002a;
         public static final int end=0x7f09000a;
         public static final int fill=0x7f09000b;
         public static final int fill_horizontal=0x7f09000c;
         public static final int fill_vertical=0x7f09000d;
         public static final int horizontal=0x7f090000;
-        public static final int idTextView=0x7f090025;
-        public static final int insecure_connect_scan=0x7f09002a;
+        public static final int idTextView=0x7f090030;
+        public static final int insecure_connect_scan=0x7f090035;
         public static final int left=0x7f09000e;
         public static final int main_Linearlayout=0x7f090017;
         public static final int massage_listview=0x7f09001a;
-        public static final int menu_toggle_log=0x7f09002c;
-        public static final int nameTextView=0x7f090028;
+        public static final int menu_toggle_log=0x7f090037;
+        public static final int nameTextView=0x7f090033;
         public static final int new_devices=0x7f090015;
-        public static final int noTextView=0x7f090024;
+        public static final int noTextView=0x7f09002f;
+        public static final int ok_bt=0x7f090028;
+        public static final int p_editUI=0x7f090021;
+        public static final int p_id=0x7f090024;
         public static final int p_list=0x7f090020;
+        public static final int p_value=0x7f090025;
         public static final int paired_devices=0x7f090013;
         public static final int right=0x7f09000f;
         public static final int sample_content_fragment=0x7f090018;
-        public static final int secure_connect_scan=0x7f090029;
+        public static final int secure_connect_scan=0x7f090034;
         public static final int start=0x7f090010;
-        public static final int state=0x7f090023;
+        public static final int state=0x7f09002c;
         public static final int timediv=0x7f09001f;
         public static final int title_new_devices=0x7f090014;
         public static final int title_paired_devices=0x7f090012;
         public static final int top=0x7f090011;
-        public static final int unitTextView=0x7f090027;
-        public static final int valueTextView=0x7f090026;
+        public static final int unitTextView=0x7f090032;
+        public static final int valueTextView=0x7f090031;
         public static final int vertical=0x7f090001;
+        public static final int x10_minus=0x7f090027;
+        public static final int x10_plus=0x7f090022;
+        public static final int x1_minus=0x7f090026;
+        public static final int x1_plus=0x7f090023;
     }
     public static final class layout {
         public static final int activity_device_list=0x7f030000;

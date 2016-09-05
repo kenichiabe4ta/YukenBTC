@@ -108,11 +108,11 @@
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\color.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 308,
+                        "startOffset": 354,
                         "endColumn": 57,
-                        "endOffset": 361
+                        "endOffset": 407
                     }
                 }
             },
@@ -194,11 +194,30 @@
             },
             {
                 "to": {
-                    "startLine": 15,
+                    "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 2976,
+                    "startOffset": 658,
+                    "endColumn": 44,
+                    "endOffset": 698
+                },
+                "from": {
+                    "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 308,
+                        "endColumn": 44,
+                        "endOffset": 348
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 3021,
                     "endColumn": 58,
-                    "endOffset": 3030
+                    "endOffset": 3075
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\23.0.0\\res\\values\\values.xml",
@@ -213,11 +232,11 @@
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 3035,
+                    "startOffset": 3080,
                     "endColumn": 56,
-                    "endOffset": 3087
+                    "endOffset": 3132
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\23.0.0\\res\\values\\values.xml",
@@ -232,11 +251,11 @@
             },
             {
                 "to": {
-                    "startLine": 17,
+                    "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 3092,
+                    "startOffset": 3137,
                     "endColumn": 53,
-                    "endOffset": 3141
+                    "endOffset": 3186
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\23.0.0\\res\\values\\values.xml",
@@ -251,11 +270,11 @@
             },
             {
                 "to": {
-                    "startLine": 18,
+                    "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 3146,
+                    "startOffset": 3191,
                     "endColumn": 42,
-                    "endOffset": 3184
+                    "endOffset": 3229
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\gridlayout-v7\\23.0.0\\res\\values\\values.xml",
@@ -270,11 +289,11 @@
             },
             {
                 "to": {
-                    "startLine": 19,
+                    "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 3189,
+                    "startOffset": 3234,
                     "endColumn": 69,
-                    "endOffset": 3254
+                    "endOffset": 3299
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-dimens.xml",
@@ -289,11 +308,11 @@
             },
             {
                 "to": {
-                    "startLine": 20,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 3259,
+                    "startOffset": 3304,
                     "endColumn": 42,
-                    "endOffset": 3297
+                    "endOffset": 3342
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-dimens.xml",
@@ -308,11 +327,11 @@
             },
             {
                 "to": {
-                    "startLine": 21,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 3302,
+                    "startOffset": 3347,
                     "endColumn": 43,
-                    "endOffset": 3341
+                    "endOffset": 3386
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-dimens.xml",
@@ -327,11 +346,11 @@
             },
             {
                 "to": {
-                    "startLine": 22,
+                    "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 3346,
+                    "startOffset": 3391,
                     "endColumn": 44,
-                    "endOffset": 3386
+                    "endOffset": 3431
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-dimens.xml",
@@ -346,11 +365,11 @@
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 3391,
+                    "startOffset": 3436,
                     "endColumn": 42,
-                    "endOffset": 3429
+                    "endOffset": 3474
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-dimens.xml",
@@ -365,11 +384,11 @@
             },
             {
                 "to": {
-                    "startLine": 24,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 3434,
+                    "startOffset": 3479,
                     "endColumn": 41,
-                    "endOffset": 3471
+                    "endOffset": 3516
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-dimens.xml",
@@ -384,11 +403,11 @@
             },
             {
                 "to": {
-                    "startLine": 25,
+                    "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 3476,
+                    "startOffset": 3521,
                     "endColumn": 67,
-                    "endOffset": 3539
+                    "endOffset": 3584
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-dimens.xml",
@@ -403,11 +422,11 @@
             },
             {
                 "to": {
-                    "startLine": 26,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 3544,
+                    "startOffset": 3589,
                     "endColumn": 45,
-                    "endOffset": 3585
+                    "endOffset": 3630
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -422,11 +441,11 @@
             },
             {
                 "to": {
-                    "startLine": 27,
+                    "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 3590,
+                    "startOffset": 3635,
                     "endColumn": 101,
-                    "endOffset": 3687
+                    "endOffset": 3732
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -441,11 +460,11 @@
             },
             {
                 "to": {
-                    "startLine": 28,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 3692,
+                    "startOffset": 3737,
                     "endColumn": 56,
-                    "endOffset": 3744
+                    "endOffset": 3789
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -460,11 +479,11 @@
             },
             {
                 "to": {
-                    "startLine": 29,
+                    "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 3749,
+                    "startOffset": 3794,
                     "endColumn": 58,
-                    "endOffset": 3803
+                    "endOffset": 3848
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -479,11 +498,11 @@
             },
             {
                 "to": {
-                    "startLine": 30,
+                    "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 3808,
+                    "startOffset": 3853,
                     "endColumn": 72,
-                    "endOffset": 3876
+                    "endOffset": 3921
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -498,11 +517,11 @@
             },
             {
                 "to": {
-                    "startLine": 31,
+                    "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 3881,
+                    "startOffset": 3926,
                     "endColumn": 55,
-                    "endOffset": 3932
+                    "endOffset": 3977
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -517,11 +536,11 @@
             },
             {
                 "to": {
-                    "startLine": 32,
+                    "startLine": 33,
                     "startColumn": 4,
-                    "startOffset": 3937,
+                    "startOffset": 3982,
                     "endColumn": 67,
-                    "endOffset": 4000
+                    "endOffset": 4045
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -536,11 +555,11 @@
             },
             {
                 "to": {
-                    "startLine": 33,
+                    "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 4005,
+                    "startOffset": 4050,
                     "endColumn": 75,
-                    "endOffset": 4076
+                    "endOffset": 4121
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -555,11 +574,11 @@
             },
             {
                 "to": {
-                    "startLine": 34,
+                    "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 4081,
+                    "startOffset": 4126,
                     "endColumn": 52,
-                    "endOffset": 4129
+                    "endOffset": 4174
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -574,11 +593,11 @@
             },
             {
                 "to": {
-                    "startLine": 35,
+                    "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 4134,
+                    "startOffset": 4179,
                     "endColumn": 52,
-                    "endOffset": 4182
+                    "endOffset": 4227
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -593,11 +612,11 @@
             },
             {
                 "to": {
-                    "startLine": 36,
+                    "startLine": 37,
                     "startColumn": 4,
-                    "startOffset": 4187,
+                    "startOffset": 4232,
                     "endColumn": 60,
-                    "endOffset": 4243
+                    "endOffset": 4288
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -612,11 +631,11 @@
             },
             {
                 "to": {
-                    "startLine": 37,
+                    "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 4248,
+                    "startOffset": 4293,
                     "endColumn": 68,
-                    "endOffset": 4312
+                    "endOffset": 4357
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -631,11 +650,11 @@
             },
             {
                 "to": {
-                    "startLine": 38,
+                    "startLine": 39,
                     "startColumn": 4,
-                    "startOffset": 4317,
+                    "startOffset": 4362,
                     "endColumn": 68,
-                    "endOffset": 4381
+                    "endOffset": 4426
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -650,11 +669,11 @@
             },
             {
                 "to": {
-                    "startLine": 39,
+                    "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 4386,
+                    "startOffset": 4431,
                     "endColumn": 37,
-                    "endOffset": 4419
+                    "endOffset": 4464
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -669,11 +688,11 @@
             },
             {
                 "to": {
-                    "startLine": 40,
+                    "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 4424,
+                    "startOffset": 4469,
                     "endColumn": 96,
-                    "endOffset": 4516
+                    "endOffset": 4561
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -688,11 +707,11 @@
             },
             {
                 "to": {
-                    "startLine": 41,
+                    "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 4521,
+                    "startOffset": 4566,
                     "endColumn": 58,
-                    "endOffset": 4575
+                    "endOffset": 4620
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -707,11 +726,11 @@
             },
             {
                 "to": {
-                    "startLine": 42,
+                    "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 4580,
+                    "startOffset": 4625,
                     "endColumn": 61,
-                    "endOffset": 4637
+                    "endOffset": 4682
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -726,11 +745,11 @@
             },
             {
                 "to": {
-                    "startLine": 43,
+                    "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 4642,
+                    "startOffset": 4687,
                     "endColumn": 71,
-                    "endOffset": 4709
+                    "endOffset": 4754
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -745,11 +764,11 @@
             },
             {
                 "to": {
-                    "startLine": 44,
+                    "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 4714,
+                    "startOffset": 4759,
                     "endColumn": 63,
-                    "endOffset": 4773
+                    "endOffset": 4818
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\strings.xml",
@@ -764,12 +783,12 @@
             },
             {
                 "to": {
-                    "startLine": 45,
+                    "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 4778,
-                    "endLine": 48,
+                    "startOffset": 4823,
+                    "endLine": 49,
                     "endColumn": 12,
-                    "endOffset": 5007
+                    "endOffset": 5052
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-styles.xml",
@@ -785,12 +804,12 @@
             },
             {
                 "to": {
-                    "startLine": 49,
+                    "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 5012,
-                    "endLine": 53,
+                    "startOffset": 5057,
+                    "endLine": 54,
                     "endColumn": 12,
-                    "endOffset": 5268
+                    "endOffset": 5313
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-styles.xml",
@@ -806,12 +825,12 @@
             },
             {
                 "to": {
-                    "startLine": 54,
+                    "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 5273,
-                    "endLine": 61,
+                    "startOffset": 5318,
+                    "endLine": 62,
                     "endColumn": 12,
-                    "endOffset": 5734
+                    "endOffset": 5779
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\23.0.0\\res\\values\\values.xml",
@@ -827,12 +846,12 @@
             },
             {
                 "to": {
-                    "startLine": 62,
+                    "startLine": 63,
                     "startColumn": 4,
-                    "startOffset": 5739,
-                    "endLine": 64,
+                    "startOffset": 5784,
+                    "endLine": 65,
                     "endColumn": 12,
-                    "endOffset": 5860
+                    "endOffset": 5905
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\23.0.0\\res\\values\\values.xml",
@@ -848,12 +867,12 @@
             },
             {
                 "to": {
-                    "startLine": 65,
+                    "startLine": 66,
                     "startColumn": 4,
-                    "startOffset": 5865,
-                    "endLine": 67,
+                    "startOffset": 5910,
+                    "endLine": 68,
                     "endColumn": 12,
-                    "endOffset": 5988
+                    "endOffset": 6033
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\cardview-v7\\23.0.0\\res\\values\\values.xml",
@@ -869,11 +888,11 @@
             },
             {
                 "to": {
-                    "startLine": 68,
+                    "startLine": 69,
                     "startColumn": 4,
-                    "startOffset": 5993,
+                    "startOffset": 6038,
                     "endColumn": 26,
-                    "endOffset": 6015
+                    "endOffset": 6060
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-styles.xml",
@@ -888,12 +907,12 @@
             },
             {
                 "to": {
-                    "startLine": 69,
+                    "startLine": 70,
                     "startColumn": 4,
-                    "startOffset": 6020,
-                    "endLine": 72,
+                    "startOffset": 6065,
+                    "endLine": 73,
                     "endColumn": 12,
-                    "endOffset": 6211
+                    "endOffset": 6256
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-styles.xml",
@@ -909,12 +928,12 @@
             },
             {
                 "to": {
-                    "startLine": 73,
+                    "startLine": 74,
                     "startColumn": 4,
-                    "startOffset": 6216,
-                    "endLine": 78,
+                    "startOffset": 6261,
+                    "endLine": 79,
                     "endColumn": 12,
-                    "endOffset": 6489
+                    "endOffset": 6534
                 },
                 "from": {
                     "file": "E:\\_dev\\Java\\Android\\_project\\YukenBTC\\Application\\src\\main\\res\\values\\template-styles.xml",

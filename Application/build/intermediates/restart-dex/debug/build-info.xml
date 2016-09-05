@@ -4,40 +4,38 @@
     api-level="21"
     density="xhdpi"
     format="7"
-    timestamp="28996288874082"
-    token="1622479546331347519" >
+    timestamp="18612169457054"
+    token="1622479546331347519"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="371" />
+        duration="333" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="428" />
     <task
         name="instant-run-transform"
-        duration="68" />
+        duration="30" />
     <task
         name="verifier"
-        duration="2" />
+        duration="4" />
 
     <artifact
-        location="E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-        type="DEX" />
+        location="E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
-    <build timestamp="26495548693460" >
+    <build timestamp="17529717224391" >
         <artifact
             location="E:\_dev\Java\Android\_project\YukenBTC\Application\build\outputs\apk\Application-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="28996288874082" >
+    <build
+        timestamp="18612169457054"
+        verifier="COMPATIBLE" >
         <artifact
-            location="E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
-    </build>
-    <build timestamp="53126174772560" >
-        <artifact
-            location="E:\_dev\Java\Android\_project\YukenBTC\Application\build\outputs\apk\Application-debug.apk"
-            type="MAIN" />
+            location="E:\_dev\Java\Android\_project\YukenBTC\Application\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

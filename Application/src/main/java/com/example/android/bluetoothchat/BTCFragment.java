@@ -41,7 +41,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.common.logger.Log;
-
 public class BTCFragment extends Fragment {       //This fragment controls Bluetooth to communicate with other devices.
     private static final String TAG = "BTCFragment";
     // Intent request codes
