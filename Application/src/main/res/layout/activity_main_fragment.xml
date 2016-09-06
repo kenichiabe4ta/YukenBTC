@@ -177,12 +177,30 @@
                 android:orientation="vertical">
                 <!-- ↑weightを可変し横幅比率を制御 -->
 
+
+                <!-- ↓ id表示 -->
                 <TextView
+                    android:id="@+id/p_id"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:padding="0dp" />
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="DS1-1"
+                    android:textSize="14dp" />
+
+                <!-- ↓ value表示 -->
+                <TextView
+                    android:id="@+id/p_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="0000"
+                    android:textSize="14dp" />
 
                 <Button
                     android:id="@+id/x10_plus"
@@ -203,30 +221,6 @@
                     android:onClick="x1_plus"
                     android:padding="0dp"
                     android:text="+" />
-
-                <!-- ↓ id表示 -->
-                <TextView
-                    android:id="@+id/p_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="0dp"
-                    android:layout_weight="0.5"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:text="DS1-1"
-                    android:textSize="12dp" />
-
-                <!-- ↓ value表示 -->
-                <TextView
-                    android:id="@+id/p_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:text="0000"
-                    android:textSize="12dp" />
 
                 <Button
                     android:id="@+id/x1_minus"
