@@ -20,8 +20,8 @@ public class CustomCanvas extends View {
     protected void onDraw(Canvas canvas) {
         mCanvas_w=getWidth();
         mCanvas_h=getHeight();
-        Log.d("canvas_w,canvas_h=",String.valueOf(mCanvas_w)+","+String.valueOf(mCanvas_h));
-        Log.d("canvas_root_w,h=",String.valueOf(getRootView().getWidth())+","+String.valueOf(getRootView().getHeight()));
+        //Log.d("canvas_w,canvas_h=",String.valueOf(mCanvas_w)+","+String.valueOf(mCanvas_h));
+        //Log.d("canvas_root_w,h=",String.valueOf(getRootView().getWidth())+","+String.valueOf(getRootView().getHeight()));
         // 背景
         canvas.drawColor(Color.BLACK);
         // 枠線描画(10分割)
@@ -32,13 +32,11 @@ public class CustomCanvas extends View {
     private void drawFrame(Canvas canvas){
         mPaint.setColor(Color.GRAY);
         mPaint.setStrokeWidth(1);
-        for (int i = 0; i<mCanvas_h; i++) {
-            if (i % (mCanvas_h/10) != 0) { continue; }
-            canvas.drawLine(0, i, mCanvas_w, i, mPaint);// drawline(始点x,y,終点x,y,Paint)
-        }
-        for (int i = 0; i<mCanvas_w; i++) {
-            if (i % (mCanvas_w/10) != 0) { continue; }
-            canvas.drawLine(i, 0, i,mCanvas_h, mPaint);
+        float h=mCanvas_h/10.0f;
+        float w=mCanvas_w/10.0f;
+        for (int i=0; i<10; i++){
+            canvas.drawLine(0, h*i, mCanvas_w, h*i, mPaint);// 横線   drawline(始点x,y,終点x,y,Paint)
+            canvas.drawLine(w*i, 0, w*i, mCanvas_h, mPaint);// 縦線   drawline(始点x,y,終点x,y,Paint)
         }
     }
     private void drawWave(Canvas canvas){

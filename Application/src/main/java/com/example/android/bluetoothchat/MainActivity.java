@@ -48,11 +48,20 @@ public class MainActivity extends FragmentActivity {
     private CustomAdapter mCustomAdapater;
     private CustomCanvas mCustomCanvas;
 
+    // 連続データ受信用
+    private android.os.Handler handler = new android.os.Handler();
+    private Runnable timer;
+    private boolean start_flg=false;
+    private Button START;
+
     // パラメータ設定用UI view
     private TextView p_id,p_value;
     private Button x10_plus,x1_plus,x1_minus,x10_minus, OKbutton,CANCEL;
     private int temp_value;
+    //private TextView mDEBUGtv;
+    private TextView s_bt,r_bt;
     private boolean value_chg_f;
+
     private ParamDetails mParamDetails;
     // パラメータ設定用UI幅変更
     private LinearLayout p_editUI;
@@ -100,6 +109,12 @@ public class MainActivity extends FragmentActivity {
         x10_minus = (Button) findViewById(R.id.x10_minus);
         OKbutton = (Button) findViewById(R.id.ok_bt);
         CANCEL = (Button) findViewById(R.id.cancel_bt);
+
+        START = (Button) findViewById(R.id.start);
+        //mDEBUGtv = (TextView) findViewById(R.id.state); //debug用
+        s_bt = (Button) findViewById(R.id.s_bt);
+        r_bt = (Button) findViewById(R.id.r_bt);
+
         // パラメータ設定用UI幅変更
         p_editUI = (LinearLayout) findViewById(R.id.p_editUI);
         setParamButton(false,false,false);   // button: +-/ok/cancel
@@ -204,9 +219,23 @@ public class MainActivity extends FragmentActivity {
         int[] wave_dt = new int[1024];
         for (int i=0; i<wave_dt.length; i++){ wave_dt[i]=i; }
         mCustomCanvas.setWavedt(wave_dt);
-        TextView mTV = (TextView) findViewById(R.id.state);     // debug用
-        mTV.setText("CH1=dummy data");
     }
+    //↑TextView mTV = (TextView) findViewById(R.id.state);     // NG
+    //mDEBUGtv.setText("CH1=dummy data");
+
+
+    // debug用ボタン
+    public void s_bt(View v){    // ダミーデータ送信
+        byte[] send = new byte[2];
+        send[0]=(byte)'s';          // LED点灯
+        mBTCFragment.getmChatService().write(send);
+    }
+    public void r_bt(View v){    // ダミーデータ送信
+        byte[] send = new byte[2];
+        send[0]=(byte)'r';          // LED消灯
+        mBTCFragment.getmChatService().write(send);
+    }
+
     // パラメータ設定用ボタン
     public void x10_plus(View v){
         if((temp_value+=10)>10000){ temp_value=9999; }
@@ -246,17 +275,36 @@ public class MainActivity extends FragmentActivity {
         editUI_open(false);
     }
 
-    // debug用ボタン
-    public void s_bt(View v){    // ダミーデータ送信
-        byte[] send = new byte[2];
-        send[0]=(byte)'s';          // LED点灯
-        mBTCFragment.getmChatService().write(send);
+    // 連続データ受信用ボタン
+    public void start(View v){
+        if(start_flg){
+            start_flg=false;
+            START.setText("STOP");
+            adStart();
+        }else{
+            start_flg=true;
+            START.setText("START");
+            handler.removeCallbacks(timer);
+        }
     }
-    public void r_bt(View v){    // ダミーデータ送信
-        byte[] send = new byte[2];
-        send[0]=(byte)'r';          // LED消灯
-        mBTCFragment.getmChatService().write(send);
+    private void adStart(){
+        timer = new Runnable() {
+            @Override
+            public void run() {
+                //繰り返し処理部分
+                s_bt(s_bt);
+                handler.postDelayed(timer,getParambyno(24));  //次回処理を２秒後にセット
+            }
+        };
+        //初回実行処理部分
+        s_bt(s_bt);
+        handler.postDelayed(timer,getParambyno(24));
     }
+    private int getParambyno(int no){
+        ParamDetails p = (ParamDetails) mlistView.getAdapter().getItem(no);
+        return p.getParam_value();
+    }
+
     @Override
     protected void onStart() {
         super.onStart();

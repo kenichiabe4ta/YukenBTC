@@ -32,14 +32,6 @@
             android:layout_height="0dp"
             android:layout_weight="17" />
 
-        <ListView
-            android:id="@+id/massage_listview"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:stackFromBottom="true"
-            android:transcriptMode="alwaysScroll" />
-
         <!-- CH表示 -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -186,7 +178,7 @@
                     android:layout_margin="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:padding="0dp"
+                    android:padding="6dp"
                     android:text="DS1-1"
                     android:textSize="14dp" />
 
@@ -198,7 +190,7 @@
                     android:layout_margin="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:padding="0dp"
+                    android:padding="6dp"
                     android:text="0000"
                     android:textSize="14dp" />
 
@@ -271,7 +263,6 @@
                     android:text="CANCEL"
                     android:textSize="10dp" />
             </LinearLayout>
-
         </LinearLayout>
 
 
@@ -281,61 +272,47 @@
             android:layout_height="0dp"
             android:layout_weight="3">
 
-            <EditText
-                android:id="@+id/edit_text_out"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:hint="debug用"
-                android:textSize="10dp" />
-
             <Button
-                android:id="@+id/button_send"
+                android:id="@+id/start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:text="@string/send"
-                android:textSize="10dp"
-                android:layout_alignTop="@+id/edit_text_out" />
+                android:text="START"
+                android:onClick="start"
+                android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:text="dummy"
                 android:layout_alignParentTop="true"
-                android:text="dummy" />
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
             <Button
+                android:id="@+id/s_bt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:text="s"
                 android:onClick="s_bt"
-                android:id="@+id/button"
-                android:layout_alignTop="@+id/button2"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_above="@+id/button_send"
-                android:layout_alignLeft="@+id/button_send"
-                android:layout_alignStart="@+id/button_send" />
+                android:layout_above="@+id/r_bt" />
 
             <Button
+                android:id="@+id/r_bt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="r"
-                android:onClick="r_bt"
-                android:id="@+id/button2"
-                android:layout_above="@+id/edit_text_out"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/state"
-                android:layout_toLeftOf="@+id/button_send"
-                android:layout_toStartOf="@+id/button_send" />
+                android:onClick="r_bt"
+                android:text="r"
+                android:layout_alignTop="@+id/button_send" />
 
         </RelativeLayout>
     </LinearLayout>

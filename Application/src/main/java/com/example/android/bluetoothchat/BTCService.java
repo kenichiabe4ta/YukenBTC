@@ -46,7 +46,8 @@ public class BTCService {                           // BTCFragment.java#setupCha
             UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");//SPPによる通信用(UUID修正済み)
     // メンバ変数
     private final BluetoothAdapter mAdapter;
-    private final Handler mHandler;
+    private final Handler mHandler;     //
+
     private AcceptThread mSecureAcceptThread;
     private AcceptThread mInsecureAcceptThread;
     private ConnectThread mConnectThread;
@@ -72,6 +73,9 @@ public class BTCService {                           // BTCFragment.java#setupCha
     public synchronized int getState() {
         return mState;
     }   //Return the current connection state.
+
+
+
 
     // AcceptThreadスタート(受信接続待機) Start the chat service
     public synchronized void start() {
@@ -330,11 +334,14 @@ public class BTCService {                           // BTCFragment.java#setupCha
             mmInStream = tmpIn;
             mmOutStream = tmpOut;
         }
-        public void run() {                         //要バグ修正？？？
+        public void run() {
             Log.i(TAG, "BEGIN mConnectedThread");
+
             int bytes;
-            byte[] buffer0 = new byte[128];
-            byte[] buffer1 = new byte[1024];
+            byte[] buffer0 = new byte[1024];
+            //byte[] buffer1 = new byte[1024];
+            int[] buffer1 = new int[1024];
+
             int line_end = 0;
             int index1 = 0;
             while (true) {  // Keep listening to the InputStream while connected
@@ -349,8 +356,13 @@ public class BTCService {                           // BTCFragment.java#setupCha
                         }
                     }
                     if (line_end == 1) {            // CRかLFコードが来たので長さindex1でbuffer1をUIへ送る
-                        mHandler.obtainMessage(Constants.MESSAGE_READ, index1, -1, buffer1) // Send the obtained bytes to the UI Activity
-                                .sendToTarget();    //↑BluetoothChat.MESSAGE_READではエラー
+                        //mHandler.obtainMessage(Constants.MESSAGE_READ, index1, -1, buffer1) // Send the obtained bytes to the UI Activity
+                        //        .sendToTarget();    //↑BluetoothChat.MESSAGE_READではエラー
+
+
+                        //setWavedt(buffer1);
+
+
                         line_end = 0;
                         index1 = 0;
                     }
@@ -362,11 +374,16 @@ public class BTCService {                           // BTCFragment.java#setupCha
                 }
             }
         }
+
+
+
         // ！！！バイト書き込み メンバ関数！！！
         public void write(byte[] buffer) {
             try {
                 mmOutStream.write(buffer);// Share the sent message back to the UI Activity
-                mHandler.obtainMessage(Constants.MESSAGE_WRITE, -1, -1, buffer).sendToTarget();
+
+
+                //mHandler.obtainMessage(Constants.MESSAGE_WRITE, -1, -1, buffer).sendToTarget();
             } catch (IOException e) {
                 Log.e(TAG, "Exception during write", e);
             }
