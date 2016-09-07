@@ -63,6 +63,12 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
     private BTCService mChatService = null;                  //Member object for the chat services
     public BTCService getmChatService(){ return mChatService; }
 
+    private CustomCanvas mCCfragment;
+    public void setCC(CustomCanvas mCustomCanvas){
+        mCCfragment=mCustomCanvas;
+    }
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,7 +154,7 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
 
 
         // Initialize the BTCService to perform bluetooth connections
-        mChatService = new BTCService(getActivity(), mHandler);
+        mChatService = new BTCService(getActivity(), mHandler, mCCfragment);
 
         // Initialize the buffer for outgoing messages
         //mOutStringBuffer = new StringBuffer("");

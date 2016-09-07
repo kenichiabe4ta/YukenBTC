@@ -52,6 +52,6 @@ public class CustomCanvas extends View {
             mWavedt[i*2+1]=mCanvas_h-dt[i]*mCanvas_h/1023;  //y軸 10bit幅/100%高さ
         }
         // 再描画 invalidate→onDraw→drawFrame→drawWaveの順番で波形表示
-        invalidate();
+        //invalidate();
     }
 }

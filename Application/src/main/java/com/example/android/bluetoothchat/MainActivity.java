@@ -100,6 +100,10 @@ public class MainActivity extends FragmentActivity {
 
         // Canvasのview取得(これがないとmCustomCanvas=nullのままNullPointerException発生
         mCustomCanvas = (CustomCanvas) findViewById(R.id.customview);
+        mBTCFragment.setCC(mCustomCanvas);
+
+
+
         // パラメータ設定用UI view
         x10_plus = (Button) findViewById(R.id.x10_plus);
         x1_plus = (Button) findViewById(R.id.x1_plus);
@@ -223,7 +227,6 @@ public class MainActivity extends FragmentActivity {
     //↑TextView mTV = (TextView) findViewById(R.id.state);     // NG
     //mDEBUGtv.setText("CH1=dummy data");
 
-
     // debug用ボタン
     public void s_bt(View v){    // ダミーデータ送信
         byte[] send = new byte[2];
@@ -292,6 +295,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void run() {
                 //繰り返し処理部分
+                mCustomCanvas.invalidate();
                 s_bt(s_bt);
                 handler.postDelayed(timer,getParambyno(24));  //次回処理を２秒後にセット
             }
