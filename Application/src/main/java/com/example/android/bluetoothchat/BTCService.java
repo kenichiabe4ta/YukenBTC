@@ -58,13 +58,11 @@ public class BTCService {                           // BTCFragment.java#setupCha
     public static final int STATE_CONNECTING = 2; // now initiating an outgoing connection
     public static final int STATE_CONNECTED = 3;  // now connected to a remote device
 
-    private CustomCanvas mCCservice;
     //コンストラクタ   mHハンドラあり
-    public BTCService(Context context, Handler handler, CustomCanvas mCC) {
+    public BTCService(Context context, Handler handler) {
         mAdapter = BluetoothAdapter.getDefaultAdapter();
         mState = STATE_NONE;
         mHandler = handler;
-        mCCservice = mCC;
     }
     //メンバ関数    mHハンドラあり
     private synchronized void setState(int state) {
@@ -75,8 +73,6 @@ public class BTCService {                           // BTCFragment.java#setupCha
     public synchronized int getState() {
         return mState;
     }   //Return the current connection state.
-
-
 
     private CustomCanvas mCC;
 
@@ -363,8 +359,9 @@ public class BTCService {                           // BTCFragment.java#setupCha
                         //mHandler.obtainMessage(Constants.MESSAGE_READ, index1, -1, buffer1) // Send the obtained bytes to the UI Activity
                         //        .sendToTarget();    //↑BluetoothChat.MESSAGE_READではエラー
 
-                        Log.d("buffer1[0]=",String.valueOf(buffer1[10]));
-                        mCCservice.setWavedt(buffer1);
+                        String str=String.valueOf(buffer1);
+                        Log.d("buffer1[0]=",String.valueOf(buffer1[0]));
+                        //mCCservice.setWavedt(buffer1);
 
 
                         line_end = 0;

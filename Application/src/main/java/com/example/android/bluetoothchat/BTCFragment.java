@@ -63,12 +63,6 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
     private BTCService mChatService = null;                  //Member object for the chat services
     public BTCService getmChatService(){ return mChatService; }
 
-    private CustomCanvas mCCfragment;
-    public void setCC(CustomCanvas mCustomCanvas){
-        mCCfragment=mCustomCanvas;
-    }
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,7 +115,6 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
         return inflater.inflate(R.layout.activity_main_fragment, container, false);
     }
 
-
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         //mConversationView = (ListView) view.findViewById(R.id.massage_listview);  // massage_listview:Message表示用listview
@@ -130,7 +123,6 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
     }
 
     private void setupChat() {    //Set up the UI and background operations for chat.
-
         Log.d(TAG, "setupChat()");
         // Initialize the array adapter for the conversation thread
         //mConversationArrayAdapter = new ArrayAdapter<String>(getActivity(), R.layout.message);  //message.xml
@@ -154,7 +146,7 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
 
 
         // Initialize the BTCService to perform bluetooth connections
-        mChatService = new BTCService(getActivity(), mHandler, mCCfragment);
+        mChatService = new BTCService(getActivity(), mHandler);
 
         // Initialize the buffer for outgoing messages
         //mOutStringBuffer = new StringBuffer("");
@@ -167,14 +159,14 @@ public class BTCFragment extends Fragment {       //This fragment controls Bluet
             startActivity(discoverableIntent);
         }
     }
-    private void sendMessage(String message) {
+    void sendMessage(byte[] message) {
         if (mChatService.getState() != BTCService.STATE_CONNECTED) { // Check that we're actually connected before trying anything
             Toast.makeText(getActivity(), R.string.not_connected, Toast.LENGTH_SHORT).show();
             return;
         }
-        if (message.length() > 0) {             // Check that there's actually something to send
-            byte[] send = message.getBytes();   // Get the message bytes and tell the BTCService to write
-            mChatService.write(send);
+        if (message.length > 0) {             // Check that there's actually something to send
+            //byte[] send = message.getBytes();   // Get the message bytes and tell the BTCService to write
+            mChatService.write(message);
             //mOutStringBuffer.setLength(0);      // Reset out string buffer to zero and clear the edit text field
             //mOutEditText.setText(mOutStringBuffer);
         }

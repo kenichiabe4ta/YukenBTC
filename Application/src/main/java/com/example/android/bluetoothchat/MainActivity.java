@@ -47,27 +47,23 @@ public class MainActivity extends FragmentActivity {
     private ListView mlistView;
     private CustomAdapter mCustomAdapater;
     private CustomCanvas mCustomCanvas;
-
     // 連続データ受信用
     private android.os.Handler handler = new android.os.Handler();
     private Runnable timer;
-    private boolean start_flg=false;
+    private boolean start_flg=true;
     private Button START;
-
     // パラメータ設定用UI view
     private TextView p_id,p_value;
     private Button x10_plus,x1_plus,x1_minus,x10_minus, OKbutton,CANCEL;
     private int temp_value;
-    //private TextView mDEBUGtv;
-    private TextView s_bt,r_bt;
-    private boolean value_chg_f;
-
     private ParamDetails mParamDetails;
+    // DEBUG用
+    private Button s_bt,r_bt;
+    private boolean value_chg_f;
     // パラメータ設定用UI幅変更
     private LinearLayout p_editUI;
     private final int WC = LinearLayout.LayoutParams.WRAP_CONTENT;
     private float mWeight = 1.0f;
-
 
     // BTCFragment.java#setupChatで生成されるmChatServiceインスタンスと混同
     // MainActivity内でmChatService.write(send);としてmChatService=NULLでエラー
@@ -100,9 +96,6 @@ public class MainActivity extends FragmentActivity {
 
         // Canvasのview取得(これがないとmCustomCanvas=nullのままNullPointerException発生
         mCustomCanvas = (CustomCanvas) findViewById(R.id.customview);
-        mBTCFragment.setCC(mCustomCanvas);
-
-
 
         // パラメータ設定用UI view
         x10_plus = (Button) findViewById(R.id.x10_plus);
@@ -115,9 +108,8 @@ public class MainActivity extends FragmentActivity {
         CANCEL = (Button) findViewById(R.id.cancel_bt);
 
         START = (Button) findViewById(R.id.start);
-        //mDEBUGtv = (TextView) findViewById(R.id.state); //debug用
-        s_bt = (Button) findViewById(R.id.s_bt);
-        r_bt = (Button) findViewById(R.id.r_bt);
+        //s_bt = (Button) findViewById(R.id.s_bt);
+        //r_bt = (Button) findViewById(R.id.r_bt);
 
         // パラメータ設定用UI幅変更
         p_editUI = (LinearLayout) findViewById(R.id.p_editUI);
@@ -220,23 +212,21 @@ public class MainActivity extends FragmentActivity {
     // ダミーデータ描画
     public void sys_bt(View v){
         mlistView.setSelection(30);
+        // debug用
         int[] wave_dt = new int[1024];
         for (int i=0; i<wave_dt.length; i++){ wave_dt[i]=i; }
         mCustomCanvas.setWavedt(wave_dt);
+        mCustomCanvas.invalidate();
     }
     //↑TextView mTV = (TextView) findViewById(R.id.state);     // NG
     //mDEBUGtv.setText("CH1=dummy data");
 
     // debug用ボタン
-    public void s_bt(View v){    // ダミーデータ送信
-        byte[] send = new byte[2];
-        send[0]=(byte)'s';          // LED点灯
-        mBTCFragment.getmChatService().write(send);
+    public void s_bt(View v){
+        mBTCFragment.getmChatService().write(Constants.COMM_s);// LED点灯
     }
-    public void r_bt(View v){    // ダミーデータ送信
-        byte[] send = new byte[2];
-        send[0]=(byte)'r';          // LED消灯
-        mBTCFragment.getmChatService().write(send);
+    public void r_bt(View v){
+        mBTCFragment.getmChatService().write(Constants.COMM_r);// LED消灯
     }
 
     // パラメータ設定用ボタン
@@ -268,11 +258,6 @@ public class MainActivity extends FragmentActivity {
         editUI_open(false);
         String msg = mParamDetails.getParam_id()+"のデータを変更しました。";
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-
-        // 変更したデータを送信
-        // byte[] send = new byte[2];
-        // send[0]=(byte)'s';
-        // mBTCFragment.getmChatService().write(send);
     }
     public void cancel_bt(View v){
         editUI_open(false);
@@ -296,13 +281,12 @@ public class MainActivity extends FragmentActivity {
             public void run() {
                 //繰り返し処理部分
                 mCustomCanvas.invalidate();
-                s_bt(s_bt);
-                handler.postDelayed(timer,getParambyno(24));  //次回処理を２秒後にセット
+                mBTCFragment.sendMessage(Constants.COMM_KD);// A/D START
+                handler.postDelayed(timer,getParambyno(24));  //次回処理をParam_no(24)[ms]にセット
             }
         };
         //初回実行処理部分
-        s_bt(s_bt);
-        handler.postDelayed(timer,getParambyno(24));
+        handler.postDelayed(timer,500);
     }
     private int getParambyno(int no){
         ParamDetails p = (ParamDetails) mlistView.getAdapter().getItem(no);

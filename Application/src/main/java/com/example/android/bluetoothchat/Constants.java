@@ -32,4 +32,9 @@ public interface Constants {
     public static final String DEVICE_NAME = "device_name";
     public static final String TOAST = "toast";
 
+    // 通信コマンド(パラメータno,value指定不要のもの)
+    public static final byte[] COMM_s = "s\r\n".getBytes();// LED点灯
+    public static final byte[] COMM_r = "r\r\n".getBytes();// LED消灯
+    public static final byte[] COMM_KD = "KD\r\n".getBytes();// A/D START
+
 }
